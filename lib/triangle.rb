@@ -10,7 +10,7 @@ class Triangle
     if @a = 0 && @b = 0 && @c = 0
       error
     elsif @a == @b && @a == @c
-      :equilateral
+      "equilateral"
     elsif @a == @b || @a == @c || @b == @c
       :isosceles
     else
