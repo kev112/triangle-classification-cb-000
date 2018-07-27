@@ -7,8 +7,18 @@ class Triangle
   end
 
   def kind
-    @a > 0 && @b > 0 && @c > 0
+    if @a > 0 && @b > 0 && @c > 0
+      error
+    elsif @a == @b && @a == @c 
+      :equilateral
+    elsif @a == @b || @a == @c || @b == @c
+      :isosceles
+    else
+      :scalene
+    end    
+  end
 
+  def error
     begin
       raise TriangleError
     rescue TriangleError => error
