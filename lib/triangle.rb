@@ -8,7 +8,11 @@ class Triangle
 
   def kind
     if @a <= 0 || @b <= 0 || @c <= 0
-      error
+      begin
+        raise TriangleError
+      rescue TriangleError => error
+        puts error.message
+      end
     elsif @a == @b && @a == @c
       :equilateral
     elsif @a == @b || @a == @c || @b == @c
