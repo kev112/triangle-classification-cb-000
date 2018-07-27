@@ -12,13 +12,13 @@ class Triangle
     begin
       raise TriangleError
     rescue TriangleError => error
-      error.message
+      puts error.message
     end
   end
 
   class TriangleError < StandardError
     def message
-      puts "not a valid triangle"
+      "not a valid triangle"
     end
   end
 end
